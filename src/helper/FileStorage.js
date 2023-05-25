@@ -1,5 +1,5 @@
 const fs = require("fs");
-const { firebaseAdmin } = require("../db/conn");
+const { storage: Storage } = require("firebase-admin");
 const { format } = require("util");
 const Multer = require("multer");
 const { BUCKET_URL } = require("../config");
@@ -17,7 +17,7 @@ const uploadProfilePhotoMiddleware = Multer({
 
 class FileStorage {
   constructor() {
-    const storage = firebaseAdmin.storage();
+    const storage = Storage();
     this.bucket = storage.bucket();
   }
 

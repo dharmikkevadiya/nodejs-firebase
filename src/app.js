@@ -10,7 +10,6 @@ const { PORT } = require("./config");
 const app = express();
 global.appRoot = path.resolve(__dirname);
 
-
 //middlewares
 app.use(logger("dev"));
 app.use(helmet());
